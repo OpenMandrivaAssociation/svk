@@ -1,7 +1,7 @@
 %define realname	SVK
 %define name		svk
-%define version		2.0.0
-%define release		%mkrel 4
+%define version		2.0.1
+%define release		%mkrel 1
 
 Name:		%{name}
 Version:	%{version}
@@ -45,7 +45,7 @@ BuildRequires:  perl(Path::Class)
 BuildRequires:  perl(UNIVERSAL::require)
 BuildRequires:  perl-version
 # For apxs2
-BuildRequires:	apache2-devel
+BuildRequires:	apache-devel
 BuildArch:	noarch
 BuildRoot:	%{_tmppath}/%{name}-%{version}
 
