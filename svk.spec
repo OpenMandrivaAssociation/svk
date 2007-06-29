@@ -1,7 +1,7 @@
 %define realname	SVK
 %define name		svk
 %define version		2.0.1
-%define release		%mkrel 1
+%define release		%mkrel 2
 
 Name:		%{name}
 Version:	%{version}
@@ -11,6 +11,7 @@ Group:		Development/Perl
 Summary:	Decentralized version control system based on Subversion
 Source0:        http://search.cpan.org/CPAN/authors/id/C/CL/CLKAO/%{realname}-v%{version}.tar.bz2
 Source1:	%{name}.bash-completion
+Patch0:		SVK-v2.0.1-fix-SVKMERGE-with-Emacs.patch
 Url:		http://svk.elixus.org/
 Requires:	perl-SVK = %{version}
 BuildRequires:	perl-Algorithm-Annotate
@@ -81,6 +82,7 @@ This package provides the base modules needed by svk.
 
 %prep
 %setup -q -n %{realname}-v%{version}
+%patch0 -p1 -b .emacs
 
 %build
 %{__perl} Makefile.PL --skip INSTALLDIRS=vendor
@@ -102,6 +104,11 @@ rm -rf %{buildroot}
 install -d -m 755 %{buildroot}%{_sysconfdir}/bash_completion.d
 install -m 644 %{SOURCE1} %{buildroot}%{_sysconfdir}/bash_completion.d/%{name}
 
+# emacs
+install -d %{buildroot}%{_datadir}/emacs/site-lisp
+install -m 644 utils/*.el %{buildroot}%{_datadir}/emacs/site-lisp/
+
+
 %clean
 rm -rf %{buildroot}
 
@@ -117,5 +124,4 @@ rm -rf %{buildroot}
 %config(noreplace) %{_sysconfdir}/bash_completion.d/%{name}
 %{_bindir}/*
 %{_mandir}/man1/*
-
-
+%{_datadir}/emacs/site-lisp/*.el
