@@ -48,7 +48,6 @@ BuildRequires:  perl-version
 # For apxs2
 BuildRequires:	apache-devel
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 svk is a decentralized version control system written in Perl.
