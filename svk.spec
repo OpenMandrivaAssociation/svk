@@ -1,7 +1,7 @@
 %define realname	SVK
 %define name		svk
 %define version		2.0.2
-%define release		%mkrel 2
+%define release		%mkrel 4
 
 Name:		%{name}
 Version:	%{version}
