@@ -43,6 +43,7 @@ BuildRequires:  perl(List::MoreUtils)
 BuildRequires:  perl(Class::Data::Inheritable)
 BuildRequires:  perl(Path::Class)
 BuildRequires:  perl(UNIVERSAL::require)
+BuildRequires:  perl(Internals)
 BuildRequires:  perl-version
 # For apxs2
 BuildRequires:	apache-devel
