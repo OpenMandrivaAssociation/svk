@@ -1,7 +1,7 @@
 %define realname	SVK
 %define name		svk
 %define version		2.0.2
-%define release		%mkrel 4
+%define release		%mkrel 5
 
 Name:		%{name}
 Version:	%{version}
@@ -10,7 +10,6 @@ License:	GPL or Artistic
 Group:		Development/Perl
 Summary:	Decentralized version control system based on Subversion
 Source0:        http://search.cpan.org/CPAN/authors/id/C/CL/CLKAO/%{realname}-v%{version}.tar.bz2
-Source1:	%{name}.bash-completion
 Patch0:		SVK-v2.0.1-fix-SVKMERGE-with-Emacs.patch
 Url:		http://svk.elixus.org/
 Requires:	perl-SVK = %{version}
@@ -100,10 +99,6 @@ chmod -R +w t
 rm -rf %{buildroot}
 %makeinstall_std
 
-# bash completion
-install -d -m 755 %{buildroot}%{_sysconfdir}/bash_completion.d
-install -m 644 %{SOURCE1} %{buildroot}%{_sysconfdir}/bash_completion.d/%{name}
-
 # emacs
 install -d %{buildroot}%{_datadir}/emacs/site-lisp
 install -m 644 utils/*.el %{buildroot}%{_datadir}/emacs/site-lisp/
@@ -121,7 +116,6 @@ rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
-%config(noreplace) %{_sysconfdir}/bash_completion.d/%{name}
 %{_bindir}/*
 %{_mandir}/man1/*
 %{_datadir}/emacs/site-lisp/*.el
