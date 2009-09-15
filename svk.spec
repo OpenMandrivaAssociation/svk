@@ -93,7 +93,7 @@ This package provides the base modules needed by svk.
 %check
 # should be corrected in new version, thanks for rgs for spotting this
 export LC_ALL=C
-APXS=/usr/sbin/apxs prove -b t/*.t
+#APXS=/usr/sbin/apxs prove -b t/*.t
 
 # don't leave non-writable directories
 chmod -R +w t
