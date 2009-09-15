@@ -1,22 +1,23 @@
-%define realname	SVK
-%define name		svk
-%define version		2.0.2
-%define release		%mkrel 6
+%define upstream_name	 SVK
+%define upstream_version v2.2.1
 
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
-License:	GPL or Artistic
-Group:		Development/Perl
+Name:       svk
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
 Summary:	Decentralized version control system based on Subversion
-Source0:        http://search.cpan.org/CPAN/authors/id/C/CL/CLKAO/%{realname}-v%{version}.tar.bz2
-Patch0:		SVK-v2.0.1-fix-SVKMERGE-with-Emacs.patch
+License:	GPL+ or Artistic
+Group:		Development/Perl
 Url:		http://svk.elixus.org/
-Requires:	perl-SVK = %{version}
+Source0:    http://search.cpan.org/CPAN/authors/id/C/CL/CLKAO/%{upstream_name}-%{upstream_version}.tar.gz
+Patch0:		SVK-v2.0.1-fix-SVKMERGE-with-Emacs.patch
+
+# For apxs2
+BuildRequires:	apache-devel
 BuildRequires:	perl-Algorithm-Annotate
 BuildRequires:	perl-Algorithm-Diff
 BuildRequires:	perl-Class-Autouse
-BuildRequires:	perl-Compress-Zlib
+BuildRequires:	perl(Compress::Zlib)
 BuildRequires:	perl-File-BaseDir
 BuildRequires:	perl-Data-Hierarchy
 BuildRequires:	perl-File-MimeInfo
@@ -45,10 +46,11 @@ BuildRequires:  perl(Path::Class)
 BuildRequires:  perl(UNIVERSAL::require)
 BuildRequires:  perl(Internals)
 BuildRequires:  perl-version
-# For apxs2
-BuildRequires:	apache-devel
+
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
+
+Requires:	perl-SVK = %{version}
 
 %description
 svk is a decentralized version control system written in Perl.
@@ -81,7 +83,7 @@ Provides:	perl(SVK::Version)
 This package provides the base modules needed by svk.
 
 %prep
-%setup -q -n %{realname}-v%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 %patch0 -p1 -b .emacs
 
 %build
