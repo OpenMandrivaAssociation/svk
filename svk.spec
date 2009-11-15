@@ -73,6 +73,7 @@ Requires:	perl-Pod-Simple
 Requires:	perl-IO-Digest
 Requires:	perl-Clone
 Requires:	perl-version
+Requires:	perl-Time-Progress
 # not really needed, but I prefer to have more features enabled by defaut
 Requires:	perl-File-MimeInfo
 Requires:	perl-Locale-Maketext-Simple
