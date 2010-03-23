@@ -1,5 +1,5 @@
 %define upstream_name	 SVK
-%define upstream_version v2.2.1
+%define upstream_version v2.2.3
 
 Name:       svk
 Version:    %perl_convert_version %{upstream_version}
