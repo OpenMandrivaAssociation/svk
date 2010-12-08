@@ -3,7 +3,7 @@
 
 Name:       svk
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 1
+Release:    %mkrel 2
 
 Summary:	Decentralized version control system based on Subversion
 License:	GPL+ or Artistic
