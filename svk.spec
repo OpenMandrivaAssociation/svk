@@ -8,7 +8,7 @@ Release:    6
 Summary:	Decentralized version control system based on Subversion
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		http://svk.elixus.org/
+Url:		https://svk.elixus.org/
 Source0:    http://search.cpan.org/CPAN/authors/id/C/CL/CLKAO/%{upstream_name}-%{upstream_version}.tar.gz
 Patch0:		SVK-v2.0.1-fix-SVKMERGE-with-Emacs.patch
 
