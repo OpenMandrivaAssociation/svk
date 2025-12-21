@@ -12,6 +12,7 @@ Url:		https://svk.elixus.org/
 Source0:    http://search.cpan.org/CPAN/authors/id/C/CL/CLKAO/%{upstream_name}-%{upstream_version}.tar.gz
 Patch0:		SVK-v2.0.1-fix-SVKMERGE-with-Emacs.patch
 
+BuildRequires:	make
 BuildRequires:	shared-mime-info
 # For apxs2
 BuildRequires:	apache-devel
