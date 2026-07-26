@@ -1,15 +1,13 @@
 %define upstream_name	 SVK
-%define upstream_version 2.002003
-
 Name:       svk
-Version:    %{upstream_version}
-Release:    1
+Version:    2.002003
+Release:    2
 
 Summary:	Decentralized version control system based on Subversion
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://svk.elixus.org/
-Source0:    https://cpan.metacpan.org/authors/id/C/CL/CLKAO/SVK-%{upstream_version}.tar.gz
+Source0:    https://cpan.metacpan.org/authors/id/C/CL/CLKAO/SVK-%{version}.tar.gz
 Patch0:		SVK-v2.0.1-fix-SVKMERGE-with-Emacs.patch
 
 BuildRequires:	make
@@ -86,7 +84,7 @@ Provides:	perl(SVK::Version)
 This package provides the base modules needed by svk.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 %patch0 -p1 -b .emacs
 
 %build
